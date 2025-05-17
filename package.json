@@ -1,0 +1,27 @@
+{
+  "name": "project-deliverable",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/fatufaUMD/Project-Deliverable#readme",
+  "bugs": {
+    "url": "https://github.com/fatufaUMD/Project-Deliverable/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fatufaUMD/Project-Deliverable.git"
+  },
+  "license": "ISC",
+  "author": "Fayez Atufa",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start":"nodemon -e '*'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.4",
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
