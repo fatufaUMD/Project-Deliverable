@@ -14,7 +14,7 @@ const supabaseKey = process.env.SUPABASE_KEY;
 const supabase = supabaseClient.createClient(supabaseUrl, supabaseKey);
 
 app.get('/', (req, res) => {
-  res.sendFile('public/INST377-Week12-Customers.html', { root: __dirname });
+  res.sendFile('public/cityLookup.html', { root: __dirname });
 });
 
 app.get('/geoData', async (req, res) => {
@@ -32,10 +32,12 @@ app.get('/geoData', async (req, res) => {
 
 app.post('/geoData', async (req, res) => {
   console.log('Adding City');
+  var firstName = req.body.firstName;
+  var lastName = req.body.lastName;
 
   console.log(req.body);
-  var firstName = req.body.City;
-  var lastName = req.body.Country;
+//   var City = req.body.City;
+//   var Country = req.body.Country;
 //   var state = req.body.state;
 
 //   if (!isValidStateAbbreviation(state)) {
