@@ -32,10 +32,13 @@ app.get('/geoData', async (req, res) => {
 
 app.post('/geoData', async (req, res) => {
   console.log('Adding City');
+  res.header('Content-Type', 'application/json');
+  console.log(req.body);
   var firstName = req.body.firstName;
   var lastName = req.body.lastName;
+  // res.header('Content-Type', 'application/json');
 
-  console.log(req.body);
+  
 //   var City = req.body.City;
 //   var Country = req.body.Country;
 //   var state = req.body.state;

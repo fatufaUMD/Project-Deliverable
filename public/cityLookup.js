@@ -63,11 +63,11 @@ function monterreyLoad(){
     });
 }
 async function createCity(){
-     await fetch(`http://127.0.0.1:3000/geoData/`, {
+     await fetch('http://127.0.0.1:3000/geoData/', {
         method: 'POST', 
         body: JSON.stringify({
-             City:`${document.getElementById('cityLocation').value}`,
-             Country: `${document.getElementById('nation').value}`,
+             firstName:`${document.getElementById('cityLocation').value}`,
+             lastName: `${document.getElementById('nation').value}`,
        })
     }).then((result) => result.json());
 }
