@@ -34,8 +34,8 @@ app.post('/geoData', async (req, res) => {
   console.log('Adding City');
   res.header('Content-Type', 'application/json');
   console.log(req.body);
-  var firstName = req.body.firstName;
-  var lastName = req.body.lastName;
+  var cityName = req.body.cityName;
+  var countryName = req.body.countryName;
   // res.header('Content-Type', 'application/json');
 
   
@@ -57,8 +57,8 @@ app.post('/geoData', async (req, res) => {
   const { data, error } = await supabase
     .from('geoData')
     .insert({
-      City: firstName,
-      Country: lastName,
+      City: cityName,
+      Country: countryName,
     
     })
     .select();

@@ -1,27 +1,22 @@
 function shanghaiLoad(){
     const shanghaiData = document.getElementById('shanghaiAir');
-    // const sourceSelect = document.getElementById('sourceInspire');
+   
     fetch('https://api.waqi.info/feed/shanghai/?token=3a6d5642997301fc8d98f111be8d8471a6dc49b2')
     .then((result) => result.json())
     .then((resultJson)=>{
     
         console.log(resultJson);
          
-
-
         console.log(resultJson.data.aqi);
 
-        shanghaiData.insertAdjacentText('beforeend', JSON.stringify(resultJson.data.aqi))
+        shanghaiData.insertAdjacentText('beforeend', JSON.stringify(resultJson.data.aqi));
      
-        // quoteSelect.insertAdjacentText('beforeend', JSON.stringify(resultJson[0].q));
-        // sourceSelect.insertAdjacentText('beforeend', JSON.stringify(resultJson[0].a));
-
        
     });
 }
 function saoPauloLoad(){
     const saoPauloData = document.getElementById('saopauloAir');
-    // const sourceSelect = document.getElementById('sourceInspire');
+  
     fetch('https://api.waqi.info/feed/sao-paulo/?token=3a6d5642997301fc8d98f111be8d8471a6dc49b2')
     .then((result) => result.json())
     .then((resultJson)=>{
@@ -29,36 +24,25 @@ function saoPauloLoad(){
         console.log(resultJson);
          
 
-
         console.log(resultJson.data.aqi);
 
-        saoPauloData.insertAdjacentText('beforeend', JSON.stringify(resultJson.data.aqi))
+        saoPauloData.insertAdjacentText('beforeend', JSON.stringify(resultJson.data.aqi));
      
-        // quoteSelect.insertAdjacentText('beforeend', JSON.stringify(resultJson[0].q));
-        // sourceSelect.insertAdjacentText('beforeend', JSON.stringify(resultJson[0].a));
-
-       
     });
 }
 
 function monterreyLoad(){
     const monterreyData = document.getElementById('monterreyAir');
-    // const sourceSelect = document.getElementById('sourceInspire');
+   
     fetch('https://api.waqi.info/feed/monterrey/?token=3a6d5642997301fc8d98f111be8d8471a6dc49b2')
     .then((result) => result.json())
     .then((resultJson)=>{
     
         console.log(resultJson);
-         
-
 
         console.log(resultJson.data.aqi);
 
-        monterreyData.insertAdjacentText('beforeend', JSON.stringify(resultJson.data.aqi))
-     
-        // quoteSelect.insertAdjacentText('beforeend', JSON.stringify(resultJson[0].q));
-        // sourceSelect.insertAdjacentText('beforeend', JSON.stringify(resultJson[0].a));
-
+        monterreyData.insertAdjacentText('beforeend', JSON.stringify(resultJson.data.aqi));
        
     });
 }
@@ -66,14 +50,12 @@ async function createCity(){
      await fetch('http://127.0.0.1:3000/geoData/', {
         method: 'POST', 
         body: JSON.stringify({
-             firstName:`${document.getElementById('cityLocation').value}`,
-             lastName: `${document.getElementById('nation').value}`,
+             cityName:`${document.getElementById('cityLocation').value}`,
+             countryName: `${document.getElementById('nation').value}`,
        })
     }).then((result) => result.json());
 }
      
-
-
 async function loadCityData(){
     await fetch(`http://127.0.0.1:3000/geoData/`)
     .then((result) => (result.json()))
@@ -104,7 +86,6 @@ async function loadCityData(){
             cityTableRow.appendChild(cityTableNation);
 
             table.appendChild(cityTableRow);
-
 
         })
         document.body.appendChild(table)
